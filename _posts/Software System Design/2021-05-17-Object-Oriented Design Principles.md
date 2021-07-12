@@ -2,8 +2,7 @@
 layout: article
 title: 01. 面向对象设计原则
 author: J_宋
-tags: 软件设计系统
-categories: 软件设计系统
+tags: 软件设计系统 中文
 mathjax: true
 key: systemDesign01
 ---
