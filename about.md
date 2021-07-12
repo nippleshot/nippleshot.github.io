@@ -28,7 +28,7 @@ key: page-about
 
 <div class="item">
   <div class="item__image">
-    <img class="image image--sm" src="/assets/images/profilePic.jpeg"/>
+    <img class="image image--lg" src="/assets/images/newProfile.JPG"/>
   </div>
   <div class="item__content">
     <div class="item__header">
@@ -36,6 +36,8 @@ key: page-about
     </div>
     <div class="item__description">
       <p>I am a undergraduate student in Software Institute in Nanjing University. I am interested in recommendation systems and computer vision. More specifically, I am particularly interested in resolving the data sparsity problem in Collaborative Filtering for implicit feedback datasets, and detecting the relation between objects.</p>
+      <br>
+      <p> <strong>Interest :</strong> 🌄 👨🏻‍💻 🏀 🏊🏻‍ </p>
     </div>
   </div>
 </div>
