@@ -41,7 +41,7 @@ key: page-about
       <h4>Interest</h4>
     </div>
     <div class="item__description">
-      <p> ✈️ 🌄 👨🏻‍💻 🏀 🏊🏻‍ </p>
+      <p> <div style="font-size:5rem;width:100%;text-align:center;">✈️ 🌄 👨🏻‍💻 🏀 🏊🏻‍</div> </p>
     </div>
   </div>
 </div>
