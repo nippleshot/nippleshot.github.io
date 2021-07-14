@@ -1,8 +1,8 @@
 ---
 layout: article
-title: 01. 面向对象设计原则
+title: 01. Object-Oriented Design Principles
 author: J_宋
-tags: 软件设计系统 中文
+tags: SoftwareSystemDesign 中文
 mathjax: true
 key: systemDesign01
 ---
