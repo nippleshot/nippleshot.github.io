@@ -79,7 +79,7 @@ key: softwareQuality02
 
 ##### Q1 : 为什么Royce瀑布模型不适合软件开发？
 
-<img src="/Users/song-giljae/nippleshot.github.io/assets/images/软质/myNote/pic02/Picture1.png" alt="Picture1" style="zoom:80%;" />
+<img src="/assets/images/软质/myNote/pic02/Picture1.png" alt="Picture1" style="zoom:80%;" />
 
 - Royce文章中的3个观点：
 
