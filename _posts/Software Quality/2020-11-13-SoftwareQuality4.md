@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 04. Estimate, planning and tracking
+title: 04. Estimate, Planning and Tracking
 author: J_宋
 tags: SoftwareQuality 中文
 mathjax: true
