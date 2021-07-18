@@ -134,3 +134,11 @@ key: softwareQuality02
 
 ***
 
+《Reference》
+
+1. 2020年(秋) 软件质量与管理 : 荣国平
+
+
+
+***
+
