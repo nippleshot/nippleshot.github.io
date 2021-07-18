@@ -137,7 +137,6 @@ key: softwareQuality03
   - TSP里面发现某个评审诡异，那么过程经理来定义评审你应该怎么做。
   - 在这个方面来看，Scrum Master跟“过程经理”的角色是很像
 - **开发团队**
-
 - 有点像 开发团队 + SCRUM Master = ‘ TSP团队’
 
 
