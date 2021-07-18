@@ -310,8 +310,9 @@ key: softwareQuality05
 
     - 一片段伪码的设计例子 ：很清楚地知道伪码干的事情（X，Y交换）
 
-      | <img src="/assets/images/软质/myNote/pic05/Screen Shot 2020-12-04 at 1.29.08 PM.png" alt="Screen Shot 2020-12-04 at 1.29.08 PM" style="zoom:50%;" /> | <img src="/assets/images/软质/myNote/pic05/Screen Shot 2020-12-04 at 1.29.34 PM.png" alt="Screen Shot 2020-12-04 at 1.29.34 PM" style="zoom:50%;" /> |
-      | ------------------------------------------------------------ | ------------------------------------------------------------ |
+      <img src="/assets/images/软质/myNote/pic05/Screen Shot 2020-12-04 at 1.29.08 PM.png" alt="Screen Shot 2020-12-04 at 1.29.08 PM" style="zoom:50%;" />
+
+      <img src="/assets/images/软质/myNote/pic05/Screen Shot 2020-12-04 at 1.29.34 PM.png" alt="Screen Shot 2020-12-04 at 1.29.34 PM" style="zoom:50%;" />
 
     - 好处 ：概念上特别简单，给出的结论是可靠的
 
