@@ -22,6 +22,7 @@ key: businessModel01
 ##### Customer Segment - 客户细分
 
 - 기업이 얼마나 **다른 유형의 사람들** 혹은 **조직을 겨냥**하는지를 규정한다
+
   :arrow_right: 누구를 위해 가치를 창조하고 누가 우리의 가장 중요한 고객인가?
 
 - 유형들 :
@@ -144,7 +145,7 @@ key: businessModel01
 
 ##### Unbundled - 分拆商业模式
 
-- *Infrastructure Management*, *Customer Relationship*, *Product Innovation* 👈 이 세 개의 비즈니스 타입은 단일 기업내에 공존할 수 있지만 갈등이나 바람직하지 않은 trade-off를 피하기 위해 분리된 독립체로 ‘unbundling’ 되는 것이 이상적이다
+- ***Infrastructure Management*, *Customer Relationship*, *Product Innovation*** 👈 이 세 개의 비즈니스 타입은 단일 기업내에 공존할 수 있지만 갈등이나 바람직하지 않은 trade-off를 피하기 위해 분리된 독립체로 ‘unbundling’ 되는 것이 이상적이다
 
 - 도전들 : 
 
@@ -155,26 +156,27 @@ key: businessModel01
 
   - 코카콜라
 
-    *Product Innovation* - 건강화를 추구함
+    - ***Product Innovation*** - 건강화를 추구함
 
-    	- 차, 운동음료, 커피콜라, 다이어트 콬크, 야자수맛 스프라이트, Non-sugar 환타
-    	- Non-sugar 추세에 적응하고 있음 (元气森林의 급속성장)
+    🔺 차, 운동음료, 커피콜라, 다이어트 콬크, 야자수맛 스프라이트, Non-sugar 환타
 
-    *Customer Relationship* - 로컬 브랜드 사드려, 상품 마케팅, 광고선전
+    🔺 Non-sugar 추세에 적응하고 있음 (元气森林의 급속성장)
 
-    - 각국의 유명 음료 브랜드를 대량으로 사들인다
+    - ***Customer Relationship*** - 로컬 브랜드 사드려, 상품 마케팅, 광고선전
 
-       <img src="/assets/images/商业模式/myNote/pic01/Screen Shot 2021-07-22 at 11.19.56 PM.png" alt="Screen Shot 2021-07-22 at 11.19.56 PM" style="zoom:20%;" />
+    🔺 각국의 유명 음료 브랜드를 대량으로 사들인다
 
-    - Diet coke 랑 Zero : 둘이 사실 비슷한건데, Diet coke는 여성들이 좋아고 남성들에겐 어필이 안되서 검은색의 Zero 를 출시함
+     <img src="/assets/images/商业模式/myNote/pic01/Screen Shot 2021-07-22 at 11.19.56 PM.png" alt="Screen Shot 2021-07-22 at 11.19.56 PM" style="zoom:20%;" />
 
-    - 포장 마켓팅 : 드라마 대사나, 음악 가사 적어놓는 등등
+    🔺 Diet coke 랑 Zero : 둘이 사실 비슷한건데, Diet coke는 여성들이 좋아고 남성들에겐 어필이 안되서 검은색의 Zero 를 출시함
 
-    *Infrastructure Management* - 포장 line을 조정함
+    🔺 포장 마켓팅 : 드라마 대사나, 음악 가사 적어놓는 등등
 
-    - 외부 업체(外包)한테 포장을 맞김 - 2016년에 북아메리카 포장 공장을 다 구매해버림 - 2017년에 다시 외부 업체한테 포장을 맞김 (중국 같은경우 광저우쪽은 太古，화동지역은 中粮)
+    - ***Infrastructure Management*** - 포장 line을 조정함
 
-      
+    🔺 외부 업체(外包)한테 포장을 맞김 - 2016년에 북아메리카 포장 공장을 다 구매해버림 - 2017년에 다시 외부 업체한테 포장을 맞김 (중국 같은경우 광저우쪽은 太古，화동지역은 中粮)
+
+    
 
 ##### Long-tail - 长尾商业模式
 
