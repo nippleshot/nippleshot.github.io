@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 01. Business Model - DESIGN & STRATEGY
+title: 02. Business Model - DESIGN & STRATEGY
 author: J_宋
 tags: BusinessModel 한글
 mathjax: true
