@@ -419,7 +419,7 @@ class Neuron(object):
 
   - 모든 Activaton들이 0이 되버림
   - Backward pass를 하게된다면 Vanishing gradient가 발생하게 됨
-  - 만약 ` W = 0.1* np.random.randn(fan_in, fan_out)` 일 경우 
+  - 만약 `W = 0.1* np.random.randn(fan_in, fan_out)`  일 경우 
     - 거의 모든 Neuron들이 -1 또는 1로 Saturation 됨
     - Gradient들도 모두 0이되서 weight 업데이트가 일어나지 않음
   - 즉, 스케일링이 너무 작으면( × 0.01) 사라져버리고 너무 크면 ( × 0.1)  Saturation 됨
@@ -546,7 +546,7 @@ class Neuron(object):
 
     - 결과에 근거하여 범위를 줄여 나감
 
-       <img src="/assets/images/计视/myNote/pic01/cs231n 5강 Training NN part 1 53-36 screenshot.png" alt="cs231n 5강 Training NN part 1 53-36 screenshot" style="zoom:35%;" />
+       <img src="/assets/images/计视/myNote/pic01/cs231n53-36screenshot.png" alt="cs231n 5강 Training NN part 1 53-36 screenshot" style="zoom:35%;" />
 
       ​	👉 `lr = 10**random.uniform(-3, -4)` , `reg = 10**random.uniform(-4, 0)` 로 변경
 
@@ -554,11 +554,11 @@ class Neuron(object):
 
 - Loss curve 모니터링
 
-   <img src="/assets/images/计视/myNote/pic01/cs231n 5강 Training NN part 1 58-4 screenshot.png" alt="cs231n 5강 Training NN part 1 58-4 screenshot" style="zoom:33%;" />
+   <img src="/assets/images/计视/myNote/pic01/cs231n58-4screenshot.png" alt="cs231n 5강 Training NN part 1 58-4 screenshot" style="zoom:33%;" />
 
 - Accuracy curve 모니터링
 
-   <img src="/assets/images/计视/myNote/pic01/cs231n 5강 Training NN part 1 1-1-48 screenshot.png" alt="cs231n 5강 Training NN part 1 1-1-48 screenshot" style="zoom:33%;" />
+   <img src="/assets/images/计视/myNote/pic01/cs231n1-1-48screenshot.png" alt="cs231n 5강 Training NN part 1 1-1-48 screenshot" style="zoom:33%;" />
 
   - 수치의 해석이 가능해서 선호함 
   - Traning accuracy와 Validation accuracy에는 Gap이 생김
@@ -599,7 +599,7 @@ class Neuron(object):
 
      - `mu` : 마찰 계수(점차 속도가 느려지게 진행되도록 해줌) 보통 0.5, 0.6, 또는 0.99로 설정 
      - 속도`velocity`를 일단 업데이트 해주고, `x`의 위치를 속도를 통해서 업데이트 해줌
-       - 언덕에서 공을 굴리는 상황을 연상하면됨 <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 6-32 screenshot.png" alt="cs231n 6강 Training NN part 2 6-32 screenshot" style="zoom:33%;" />
+       - 언덕에서 공을 굴리는 상황을 연상하면됨 <img src="/assets/images/计视/myNote/pic01/cs231n6-32screenshot.png" alt="cs231n 6강 Training NN part 2 6-32 screenshot" style="zoom:33%;" />
        - 경사가 낮은 지점에서는 속도가 천천히 build up 됨
      - SGD보다 빠르게 찾아감
 
@@ -613,7 +613,7 @@ class Neuron(object):
 
      - <span style="color:red">Gradient step</span>을 계산하기 전에 <span style="color:green">Momentum step</span>을 미리 고려를 해서 시작점을 <span style="color:green">Momentum step</span>의 종료점으로 변경한 다음 gradient step을 평가하는 방식 
 
-       <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 9-26 screenshot.png" alt="cs231n 6강 Training NN part 2 9-26 screenshot" style="zoom:33%;" />
+       <img src="/assets/images/计视/myNote/pic01/cs231n9-26screenshot.png" alt="cs231n 6강 Training NN part 2 9-26 screenshot" style="zoom:33%;" />
 
      - forward/backward 과정에서 불편한 점 : 
 
@@ -683,8 +683,8 @@ class Neuron(object):
   - 초기에는 큰 learing rate를 적용하고 서서히 learing rate를 작게 만들어 적용할 수 있게하도록
 
     - 方法1 -- Step Decay : 한 Epoch마다 learing rate를 일정한 간격으로 감소시켜주는 방법
-    - 方法2 -- Exponential Decay : <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 20-4 screenshot.png" alt="cs231n 6강 Training NN part 2 20-4 screenshot" style="zoom:43%;" />
-    - 方法3 -- 1/t Decay : <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 20-5 screenshot.png" alt="cs231n 6강 Training NN part 2 20-5 screenshot" style="zoom:43%;" />
+    - 方法2 -- Exponential Decay : <img src="/assets/images/计视/myNote/pic01/cs231n20-4screenshot.png" alt="cs231n 6강 Training NN part 2 20-4 screenshot" style="zoom:43%;" />
+    - 方法3 -- 1/t Decay : <img src="/assets/images/计视/myNote/pic01/cs231n20-5screenshot.png" alt="cs231n 6강 Training NN part 2 20-5 screenshot" style="zoom:43%;" />
 
     
 
@@ -692,7 +692,7 @@ class Neuron(object):
 
   - 곡면이 어떻게 구성되었는지 알면 학습 필요없이 바로 최저점으로 갈 수 있음
 
-  <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 22-17 screenshot.png" alt="cs231n 6강 Training NN part 2 22-17 screenshot" style="zoom:33%;" />
+  <img src="/assets/images/计视/myNote/pic01/cs231n22-17screenshot.png" alt="cs231n 6강 Training NN part 2 22-17 screenshot" style="zoom:33%;" />
 
   - 장점 :
 
@@ -724,7 +724,7 @@ class Neuron(object):
 
   - Dropout
 
-     <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 27-22 screenshot.png" alt="cs231n 6강 Training NN part 2 27-22 screenshot" style="zoom:33%;" />
+     <img src="/assets/images/计视/myNote/pic01/cs231n27-22screenshot.png" alt="cs231n 6강 Training NN part 2 27-22 screenshot" style="zoom:33%;" />
 
     ```python
     probability = 0.5  # dropout확률 설정
@@ -754,7 +754,7 @@ class Neuron(object):
 
       👉 Network 내의 각 node가 한 부분만 집중적으로 관찰하는게 아니라 약간씩 중복을 가지면서 모든 것을 같이 관찰하는 모습을 보이면서 성능이 좋아짐
 
-       <img src="/assets/images/计视/myNote/pic01/cs231n 6강 Training NN part 2 30-58 screenshot.png" alt="cs231n 6강 Training NN part 2 30-58 screenshot" style="zoom:30%;" />
+       <img src="/assets/images/计视/myNote/pic01/cs231n30-58screenshot.png" alt="cs231n 6강 Training NN part 2 30-58 screenshot" style="zoom:30%;" />
 
       👉 Overfitting을 어느정도 막아준다. 
 
