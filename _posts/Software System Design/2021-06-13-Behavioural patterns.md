@@ -124,7 +124,8 @@ key: systemDesign03
     - 策略模式 - 사용자가 쉽게 알고리즘 전략을 바꿀 수 있도록 유연성을 제공. 상속의 한계를 해결하기 위하여 나온 패턴. 
 
       ```java
-      //Strategy 패턴을 떠올려보면 클라이언트 쪽에서 알고리즘을 변경하기 위하여 setter를 호출해 직접 수행할 알고리즘을 주입해주었던 것을 기억할 것이다. 즉, 클라이언트가 구체적인 알고리즘의 수행까지는 몰라도 어느정도 무엇무엇이 있는지 정도는 알고 있어야 한다는 것이다.
+      //Strategy 패턴을 떠올려보면 클라이언트 쪽에서 알고리즘을 변경하기 위하여 setter를 호출해 직접 수행할 알고리즘을 주입해주었던 것을 기억할 것이다. 
+      // 즉, 클라이언트가 구체적인 알고리즘의 수행까지는 몰라도 어느정도 무엇무엇이 있는지 정도는 알고 있어야 한다는 것이다.
       public class DuckMain {
           public static void main(String[] args) {
               Duck a = new ADuck();
@@ -145,11 +146,12 @@ key: systemDesign03
           }
       }
       ```
-
+      
       状态模式 - 한 객체가 동일한 동작을 상태에 따라 다르게 수행해야 할 경우 사용하는 패턴
-
+      
       ```java
-      // 하지만 State 패턴은 각 상태 구현 클래스들이 자신들의 행위를 수행하면서 직접 Context(Light)객체의 상태를 변경해주기 때문에 클라이언트 입장에서는 직접 상태를 조작하거나 하지 않아도 된다는 점이다. 즉, 클라이언트는 상태를 몰라도 된다라는 뜻이다
+      // 하지만 State 패턴은 각 상태 구현 클래스들이 자신들의 행위를 수행하면서 직접 Context(Light)객체의 상태를 변경해주기 때문에 클라이언트 입장에서는 직접 상태를 조작하거나 하지 않아도 된다는 점이다. 
+      // 즉, 클라이언트는 상태를 몰라도 된다라는 뜻이다
       public class StatePatterMain { // Client-side
           public static void main(String[] args) {
               Light l = new Light(); // Context
@@ -159,14 +161,14 @@ key: systemDesign03
           }
       }
       ```
-
+      
       
 
 - 案例 ：宾馆管理系统
 
    <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-01 at 11.28.35 PM.png" alt="Screen Shot 2021-06-01 at 11.28.35 PM" style="zoom: 23%;" />
 
-   <img src="//assets/images/软设/myNote/pic_04/Screen Shot 2021-06-01 at 11.29.59 PM.png" alt="Screen Shot 2021-06-01 at 11.29.59 PM" style="zoom: 33%;" />
+   <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-01 at 11.29.59 PM.png" alt="Screen Shot 2021-06-01 at 11.29.59 PM" style="zoom: 33%;" />
 
   ```java
   //重构之后的“空闲状态类”示例代码 
@@ -224,14 +226,15 @@ key: systemDesign03
 
 - 对请求排队或者记录请求日志，以及支持可撤销的操作
 
-   <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-02 at 10.49.01 AM.png" alt="Screen Shot 2021-06-02 at 10.49.01 AM" style="zoom: 33%;" />
+  <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-02 at 10.49.01 AM.png" alt="Screen Shot 2021-06-02 at 10.49.01 AM" style="zoom: 33%;" />
 
   - Ex) 리모콘은 실내의 전등을 키고 끄는 버튼이 있고 TV를 켜고 끄는 버튼도 있습니다. 추후에는 다양한 전자기기를 다룰 수 있는 버튼이 추가될 가능성이 있습니다
 
   [Invoker]
 
   ```java
-  // 리모콘 역할을 하는 클래스에는 구체적인 행위가 정의되어 있지 않습니다。 생성자의 매개변수 혹은 setter를 이용하여 주입받은 Command 객체로 행위를 호출하는 호출자(Invoker) 역할을 하게됩니다
+  // 리모콘 역할을 하는 클래스에는 구체적인 행위가 정의되어 있지 않습니다
+  // 생성자의 매개변수 혹은 setter를 이용하여 주입받은 Command 객체로 행위를 호출하는 호출자(Invoker) 역할을 하게됩니다
   public class RemoteControlInvoker {
       private Command command; 
     	// 变化的原因不在于Invoker自生有不同的行为，而是因为Invoker有一个参数本身是另外一个对象。
@@ -529,7 +532,7 @@ key: systemDesign03
   - ⚠️注意点1 ： 三个<span style="color:blue">蓝色</span>，一个<span style="color:purple">紫色</span> 
     - <span style="color:purple">紫色</span>是"Interface"
     - <span style="color:blue">蓝色</span>是"Abstract"
-    - interface와 abstract의 차이 : https://www.youtube.com/watch?v=VuJHRyIq-w0
+    - interface와 abstract의 차이 : <a href="https://www.youtube.com/watch?v=VuJHRyIq-w0">Link </a>
   - :warning: 注意点2：Subject拥有observers的引用, ConcreteObserver拥有subject的引用
     - 这些引用有什么作用？
 
@@ -770,7 +773,7 @@ key: systemDesign03
 
 - 子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤
 
-   <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-09 at 12.07.24 PM.png" alt="Screen Shot 2021-06-09 at 12.07.24 PM" style="zoom: 33%;" />
+  <img src="/assets/images/软设/myNote/pic_04/Screen Shot 2021-06-09 at 12.07.24 PM.png" alt="Screen Shot 2021-06-09 at 12.07.24 PM" style="zoom: 33%;" />
 
   - templateMethod()：通常被声明称final static
 
@@ -791,42 +794,46 @@ key: systemDesign03
        - Hook Method - 通过在子类中实现 的钩子方法对父类方法的执行进行约束，实现子类对父类行为的反向控制
 
          - Hook Method 종류1 - 空方法 ：嵌入在算法的步骤中（例如开头或者结尾，用户可以添加实现，也可以不添加）
-
-         - Hook Method 종류2 - ’挂钩‘方法 ：一种是返回bool值的方法，可以控制是否执行某个步骤
-
-       ```java
-       public abstract class AbstractClass{
-         public void templateMethod(){ // Template Method(模版方法)
-           primitiveOperation1(); 
-        	 	primitiveOperation2(); 
-         	primitiveOperation3();
-           if(isPrint()){
-             doSomething();
-           }
-         }
-         
-       	//Operation Method(基本方法) -- Concrete Method
-         public void primitiveOperation1(){
-         	//实现代码
-         }
-         
-         //Operation Method(基本方法) -- Abstract Method
-       	public abstract void primitiveOperation2(); 
-         
-         //Operation Method(基本方法) -- Hook Method ’挂钩‘方法
-         public boolean isPrint() { 
-       		return true; 
-         }
-         
-         //Operation Method(基本方法) -- Hook Method 空方法
-         public void primitiveOperation3(){ 
-           
-         }
+       - Hook Method 종류2 - ’挂钩‘方法 ：一种是返回bool值的方法，可以控制是否执行某个步骤
        
-       ```
 
+    
+    
+    [Abstract Class -- 抽象类]
+    
+    ```java
+    public abstract class AbstractClass{
+      public void templateMethod(){ // Template Method(模版方法)
+        primitiveOperation1(); 
+     	 	primitiveOperation2(); 
+      	primitiveOperation3();
+        if(isPrint()){
+          doSomething();
+        }
+      }
+      
+    	//Operation Method(基本方法) -- Concrete Method
+      public void primitiveOperation1(){
+      	//实现代码
+      }
+      
+      //Operation Method(基本方法) -- Abstract Method
+    	public abstract void primitiveOperation2(); 
+      
+      //Operation Method(基本方法) -- Hook Method ’挂钩‘方法
+      public boolean isPrint() { 
+    		return true; 
+      }
+      
+      //Operation Method(基本方法) -- Hook Method 空方法
+      public void primitiveOperation3(){ 
+        
+      }
+    }
+    ```
+    
     [Concrete Class -- 子类]
-
+    
     ```java
     public class ConcreteClass extends AbstractClass {
       public void primitiveOperation2() {
@@ -837,7 +844,7 @@ key: systemDesign03
       }
     }
     ```
-
+    
     
 
 - 优点：
