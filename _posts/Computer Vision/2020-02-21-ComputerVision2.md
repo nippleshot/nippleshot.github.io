@@ -81,7 +81,7 @@ key: ComputerVision02
 
       
       $$
-      \text{ \color{blue}{Input size} \color{purple}{(with pad)} } = 36 \times 36 \times 3 \\
+      \text{ Input size (with pad)} = 36 \times 36 \times 3 \\
       \text{ 1 Activation map size } = {36 - 5 \over 1} + 1 = 32 \\
       \text{ Total Activation map size } = 32 \times 32 \times \color{red}{10}
       $$
