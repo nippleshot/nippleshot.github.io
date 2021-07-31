@@ -78,12 +78,18 @@ key: ComputerVision02
     - ***Example*** : <img src="/assets/images/计视/myNote/pic02/cs231n15-48screenshot.png" alt="cs231n15-48screenshot" style="zoom:23%;" />
 
       *Q1 : 그럼 Activation map size는?*
+
+      
       $$
       \text{ \color{blue}{Input size} \color{purple}{(with pad)} } = 36 \times 36 \times 3 \\
       \text{ 1 Activation map size } = {36 - 5 \over 1} + 1 = 32 \\
       \text{ Total Activation map size } = 32 \times 32 \times \color{red}{10}
       $$
+      
+
       *Q2 : 이 layer의 parameter수는 ?*
+
+      
       $$
       \text{ Amount of 1 Filter's parameter (with bias)} = (5 \times 5 \times 3 ) + 1 = 76 \\
       \text{ Total amount of 10 Filter's parameter (with bias)} = 76 \times 10 = 760
@@ -108,6 +114,8 @@ key: ComputerVision02
   - *计算公式3* ：Max Pooling통해 나온 Activation map의 Width or Height size 구하기
 
     :warning: total Activation map depth = Input depth
+
+    
     $$
     {\text{ Input Width or Height size } - \text{ Filter Width or Height size } \over \text{ Stride }} + 1
     $$
