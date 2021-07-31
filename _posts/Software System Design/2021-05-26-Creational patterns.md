@@ -5,7 +5,6 @@ author: J_宋
 tags: SoftwareSystemDesign 中文 한글
 mathjax: true
 key: systemDesign02
-
 ---
 
 ***
@@ -386,4 +385,16 @@ concreteProduct.doSomething();
 - 应用 ：Struts2中Action对象，Spring bean实例
 
 
+
+
+
+---
+
+《Reference》
+
+1. 2021年(春) 软件设计系统 : 潘敏学
+
+
+
+***
 
