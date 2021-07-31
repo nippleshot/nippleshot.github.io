@@ -2,7 +2,7 @@
 layout: article
 title: 01. CS231N 요약 (Background, Neural network)
 author: J_宋
-tags: ComputerVision 한글
+tags: ComputerVision CS231n 한글
 mathjax: true
 key: ComputerVision01
 ---
@@ -462,6 +462,8 @@ class Neuron(object):
 
   - Learning rate가 다소 큰 값을 가지더라도 그걸 허용해줌으로써 빠른 학습을 가능케 하는 효과가 있음
   - weight 초기화에 너무 의존하지 않아도 됨
+
+- Batch Normalization를 사용하면 Dropout을 사용할 필요가 없다고 함
 
 
 
