@@ -45,7 +45,7 @@ key: ComputerVision02
 
   - Convolution Layer에서는 *x*개의 filter 가 Convolution Layer의 input위에서 Convolution operation를 진행하면 *x*개의 Activation map들을 생성함
 
-    <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-07-30 at 2.28.57 PM.png" alt="Screen Shot 2021-07-30 at 2.28.57 PM" style="zoom:35%;" />
+    <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-04 at 1.02.10 PM.png" alt="Screen Shot 2021-08-04 at 1.02.10 PM" style="zoom:40%;" />
 
     - 참고 : Filter가 1 × 1 × input depth 이라도 의미가 있음 
 
@@ -290,8 +290,214 @@ key: ComputerVision02
 - 더 깊은 Layer의 architecure 사용
 - Pooling Layer, Fully Connected Layer를 점차 사용하지 않음
   - 그냥 Convolution Layer만 사용 : Stride를 활용하여 spacial reduction하는 방식으로
+  -  Fully Connected Layer의 문제점 :
+    1. 연산량 매우 많음
+    2. classification에 영향을 끼친 feature가 어느 부분에서 추출되었는지 (위치 정보) 도 알 수 없음
+    3. input 의 크기 또한 제한된다
+
+##### Global Average Pooling (GAP)
+
+- Fully Connected Layer의 대안으로 제시된 것
+
+  <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-01 at 9.22.52 PM.png" alt="Screen Shot 2021-08-01 at 9.22.52 PM" style="zoom:50%;" />
+
+  - GAP는 각각의 feature map(= Activation map)에서 대표값(average)을 추출해 바로 각 class에 대한 score로 구성된 vector로 나타남
+
+    <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-01 at 9.18.51 PM.png" alt="Screen Shot 2021-08-01 at 9.18.51 PM" style="zoom:35%;" />
+
+- GAP의 특징 :
+  - 이전 feature map들이 가지고 있는 위치 정보를 유지하면서 class category로 직접 연관시키는 역할
+  - 별도의 parameter optimization 을 필요로 하지 않기 때문에 연산량이 적음
+    - overfitting 문제도 차단할 수 있음
 
 
+
+#### Adversarial examples
+
+- Input 이미지에 대한 최적화를 함으로써 우리는 어떤 Class에 Score라도 maximize할 수 있음
+
+  - 이런 방법을 사용해서 CNN를 속일 수 도 있음 
+
+     <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-02 at 4.58.25 PM.png" alt="Screen Shot 2021-08-02 at 4.58.25 PM" style="zoom:30%;" />
+
+- EXPLAINING AND HARNESSING ADVERSARIAL EXAMPLES [Goodfellow, Shlens & Szegedy, 2014]
+
+  - "Neural Network이 Adversarial attack에 취약한 것은 Linear 한 성질 때문이다"
+
+    ***Example.*** Binary linear classifier를 속여보기
+
+     <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-02 at 5.04.18 PM.png" alt="Screen Shot 2021-08-02 at 5.04.18 PM" style="zoom:40%;" />
+
+    ​	👉 class 1과 class 0의 확률을 합하면 1.0 이 나옴, 그래서 class 1 확률 = 1.0 - class 0의 확률
+
+     <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-02 at 5.06.55 PM.png" alt="Screen Shot 2021-08-02 at 5.06.55 PM" style="zoom:30%;" />
+
+    💁🏻 이제 Adversarial한 x를 만들어보자 (즉 결과가 classifier가 class 1이 나오도록 x를 조정해보자)
+
+    - 대응하는 w가 양수 일 경우 x를 크게 만들고, w가 음수 일 경우 x를 작게 만들자
+
+      - 대신 Adversarial한 x를 원래 x와 유사하게 보여야되기 때문에 약간의 변형만 준다 (한 0.5정도)
+
+       <img src="/assets/images/计视/myNote/pic02/Screen Shot 2021-08-02 at 5.12.46 PM.png" alt="Screen Shot 2021-08-02 at 5.12.46 PM" style="zoom:30%;" />
+
+  
+
+- image *x* 같은 경우 큰 차원(ex. 224x224)을 가지고 있기 때문에 더 약간의 변화만 주더라도 매우 쉽게 Adversarial한 *x*를 만들 수 있음
+
+  - 그래서 Linear regression은 어떤 변화를 줘야하는지 정확히 파악하고 있는 경우라면 아주 작은 변화라도 크게 변경을 시킬 수 있음
+
+- 사실 이런 문제들은 image에서만 국한되는 것이 아니라, speak recognition 등 여러 방면들에서 발생할 수 있음
+
+
+
+#### Data Augmentation
+
+- 데이터의 label은 변함없이 Pixel을 고침 그리고 이 변경된 데이터를 학습함 
+
+- 방법들 :
+
+1. 반대로 filp하는 방법
+
+2. 랜덤하게 자르고 스케일도 다양하게 하는 방법
+
+3. 색을 jittering 하기
+
+   - 복잡한 방법 :
+
+     [1] 이미지의 R,G,B에 대해 <a href="https://excelsior-cjh.tistory.com/167">PCA</a>를 적용함 
+
+     [2] 그럼 각 R,G,B에 대해서 Principal componet direction (color가 변화해 나가는 방향성)을 따라서 color의 offset을 sampling 해줌
+
+     [3] 이 offset을 모든 pixel에 더해줌
+
+and more ...
+
+- 작은 데이터셋의 경우 매우 유용
+
+
+
+#### All About Convolutions
+
+##### Small Filter
+
+다음 방식들을 활용하면 CNN의 parameter 수가 줄어들어 연산량이 줄고 CNN가 더 non-linearity하게 됨 
+
+1. ***큰 filter 사용을 피하고 작은 filter를 사용하는 방식으로 대체하자*** 
+
+   <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-04 at 4.27.54 PM.png" alt="Screen Shot 2021-08-04 at 4.27.54 PM" style="zoom:30%;" />
+
+   - 3개의 conv. layer가 있고 각 layer에는 3x3 filter (stride=1)를 사용한다하자
+
+   - 직관적으로 봤을 때, 3번째 conv. layer을 통과한 Activation map의 한 뉴런은 input layer의 7x7 영역 (Receptive field) 을 보게되는 셈임
+
+     - 즉, 7x7 filter (stride=1)를 지닌 conv. layer 1개를 통과 시킨 것과 같은 영향을 보이는 셈이다
+
+        <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-04 at 4.37.41 PM.png" alt="Screen Shot 2021-08-04 at 4.37.41 PM" style="zoom:30%;" />
+
+   - 그럼 위에 두 상황에서 parameter 수량과 연산횟수를 계산해보면 작은 filter를 사용하는 방식이 두 방면 모두 더  적다는 걸 알 수 있다. 
+
+      <img src="/assets/images/计视/myNote/pic04/cs231n 11강 CNNs in practice 21-57 screenshot.png" alt="cs231n 11강 CNNs in practice 21-57 screenshot" style="zoom:25%;" />
+
+   - 그리고 더 층을 쌓을 수로 그만큼 activation function도 쌓아지기 때문에 non-linearity가 더 강화된다
+
+2. ***1x1 "bottleneck" convolution도 매우 효과적임***
+
+    <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-04 at 4.58.21 PM.png" alt="Screen Shot 2021-08-04 at 4.58.21 PM" style="zoom:30%;" />
+
+   - Parameter 수량 계산 (bias 제외)
+
+     |                            | Bottleneck       |                      | Single      |
+     | -------------------------- | ---------------- | -------------------- | ----------- |
+     | **C/2개 1x1xC filter **    | 1xCx(C/2) 개     | **C개 3x3xC filter** | 9xCxC 개    |
+     | **C/2개 3x3x(C/2) filter** | 9x(C/2)x(C/2) 개 |                      |             |
+     | **C개 1x1x(C/2) filter **  | 1x(C/2)x(C) 개   |                      |             |
+     | **Total (Sum)**            | *3.25 x (C^2)*   | **Total (Sum)**      | *9 x (C^2)* |
+
+     💁🏻 즉 Bottleneck 모델의 Parameter 수량이 더 적고 이로 인해 연산량도 더 적을 것임! (+ 더 깊은 층으로 인한 non-linearity 강화)
+
+3. ***NxN convolution의 경우 1xN 그리고 Nx1의 두 개의 layer로 나누자***
+
+     <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-04 at 5.13.46 PM.png" alt="Screen Shot 2021-08-04 at 5.13.46 PM" style="zoom:30%;" />
+
+   💁🏻 위에서 보이다 싶이 Parameter 수량이 더 적어져 연산이 가벼워짐 (+ 더 깊은 층으로 인한 non-linearity 강화)
+
+     
+
+- 사용된 사례 : GoogLeNet
+
+   <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-04 at 5.16.12 PM.png" alt="Screen Shot 2021-08-04 at 5.16.12 PM" style="zoom:40%;" />
+
+
+
+##### Computing Convolutions
+
+###### im2col
+
+- 다차원의 데이터를 행렬로 변환하여 행렬 연산을 하도록 해주는 함수
+
+- 다차원 데이터의 합성곱(convolution) 결과 ==  im2col을 통해 행렬로 변환된 데이터의 내적 결과
+
+  1. 입력 데이터(4x4x3)를 행렬로 변환 
+
+   <img src="/assets/images/计视/myNote/gif/im2col.gif" alt="im2col" style="zoom:40%;" />
+
+  2. 2개 filter(2x2x3)도 행렬로 변환
+
+   <img src="/assets/images/计视/myNote/pic04/im2col2.png" alt="im2col2" style="zoom:43%;" />
+
+  3. 변환한 두 행렬의 곱
+
+   <img src="/assets/images/计视/myNote/gif/im2colMul.gif" alt="im2colMul" style="zoom:60%;" />
+
+  4. 행렬로 변환한 입력 데이터와 필터의 행렬 연산 이후, 우리는 출력된 데이터(행렬)를 다시 원래의 데이터(3차원)로 변환해주는 작업을 해야됨
+
+     <img src="/assets/images/计视/myNote/gif/col2im.gif" alt="col2im" style="zoom: 60%;" />
+
+  
+
+- im2col를 사용하면 연산 속도는 빠르다. 
+
+  - 하지만 연산해야하는 데이터 수가 늘어났기 때문에 연산 메모리가 증가한다는 단점도 존재한다.
+
+
+
+###### Fast Fourier Transform (FFT)
+
+ <img src="/assets/images/计视/myNote/pic04/32-42screenshot.png" alt="32-42screenshot" style="zoom:33%;" />
+
+- Filter가 클 경우(7x7) 효과가 상당히 있지만 Filter가 작을 경우(3x3) 효과가 그다지 크지 않음
+
+
+
+###### Fast Algorithms
+
+- Strassen's Algoritm을 사용하여 matrix multiplication 복잡도를 줄임
+- Details : <a href="https://arxiv.org/abs/1509.09308">Paper</a>
+
+
+
+##### Floating point precision
+
+- 일반적으로 프로그래밍에서는 64bit (double precision)가 default
+
+- 성능 향상을 위해 32bit (single precision)를 사용할 수 있음 
+
+- 요즘 16bit (half precision)도 지원하는 library 도 있음 
+
+  - 하지만 Floating point precision 문제가 발생할 수 있음 
+  - 16bit (half precision)로 Training과 Testing를 할 경우 error률이 발산함
+    - Stochastic rounding 방법 : parameter 와 activation을 모두 16bit로 일단 생성한 다음 곱셉연산이 일어나는 경우에 더 높은 bit로 잠시 올려 줬다가 곱셉연산이 끝나면 다시 낮추는 방식
+    - Stochastic rounding 를 적용했을 때 error률이 수렴하는데 성공을 함
+
+- 2016년에는 parameter 와 activation을 모두 1bit로 학습을 시키는 모델을 제안함 (BinaryNet)
+
+  - 모든 parameter 와 activation는 +1 또는 -1 로 설정 
+
+    - 단, gradient는 좀 더 높은 precision을 사용함 
+
+  - Bitwise XNOR 연산을 활용해서 빠른 곱셉을 수행함
+
+    
 
 
 
@@ -300,9 +506,11 @@ key: ComputerVision02
 《Reference》
 
 1.  <a href="https://www.youtube.com/watch?v=5t1E3LZ3FDY&list=PL1Kb3QTCLIVtyOuMgyVgT-OeW0PYXl3j5&index=6">Youtube</a>
-2. <a href="https://leechamin.tistory.com/98?category=830805">Blog</a>
+2. <a href="https://vision4me.tistory.com/5">Blog - GAP</a>
 3. <a href="https://cs231n.github.io/">Course Site</a>
 4. <a href="https://developer.qualcomm.com/software/qualcomm-neural-processing-sdk/learning-resources/cnn-architectures/deep-learning-convolutional-neural-networks-computer-vision">Qualcomm explanation</a>
+5. <a href="https://poloclub.github.io/cnn-explainer/">CNN Workflow Visualization</a>
+6. <a href="https://hackmd.io/@bouteille/B1Cmns09I#II-Backward-propagation">Blog - im2col</a>
 
 ***
 

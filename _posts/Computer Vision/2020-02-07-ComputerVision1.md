@@ -467,21 +467,44 @@ class Neuron(object):
 
 
 
-##### Training
+##### Training (Transfer Learning)
 
 - 우리 모델을 처음부터 학습시키는 경우는 잘 없다
 
-- 이미 연관된 다른 데이터셋으로 학습된 모델의 Weight들을 가져와서 이 가중치를 <span style="color:green">우리의 데이터</span>에 적용시키는 방법들 :
+- 이미 연관된 다른 데이터셋으로 학습된 모델의 Weight들을 가져와서 이 가중치를 <span style="color:blue">우리의 데이터</span>에 적용시키는 방법 :
 
-  - <span style="color:green">Small size</span> dataset 일  경우 : 
+  - <span style="color:blue">Small size</span> dataset 일  경우 : 
 
      <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 2.40.15 PM.png" alt="Screen Shot 2021-07-26 at 2.40.15 PM" style="zoom:30%;" />
 
+    - 즉, fix한 부분은 feature를 추출해주는 역할로 사용하면됨 
+
     
 
-  - <span style="color:green">Medium size</span> dataset 일  경우 : 
+  - <span style="color:blue">Medium size</span> dataset 일  경우 : 
 
      <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 2.41.45 PM.png" alt="Screen Shot 2021-07-26 at 2.41.45 PM" style="zoom:30%;" />
+
+    :small_red_triangle: Tip : <span style="color:green">top layer들</span>의 경우  learning rate설정을 원래의 learning rate의 약 1/10을 사용하고 <span style="color:orange">중간 layer들</span>의 경우  learning rate설정을 원래의 learning rate의 약 1/100을 사용을 추천
+
+- 이런 pre-trained 모델을 활용하여 학습하는 방식이 처음부터 학습을 시키는 방식보다 성능이 잘나오는 이유 :
+
+  - pre-trained 모델이 ImageNet 데이터셋으로 훈련된 것이라 하면..
+
+    1. ImageNet 데이터셋과 유사한 이미지들을 classify 해야될 경우, <span style="color:green">top layer들</span>만 학습시켜도 좋은 성과를 얻을 수 있음
+    2. ImageNet 데이터셋과 관련없는 데이터셋 (ex. 의료 데이터) 을 classify 해야될 경우, 학습 시켜야되는 layer를 <span style="color:green">top layer들</span> 부터  <span style="color:orange">중간 layer들</span> 까지 올려야됨
+
+    🤔 그럼 <span style="color:orange">중간 layer들</span> 에 전혀관계 없는 이미지 (ex. 의료 데이터)에 대해서 학습을 시켰다고 해서 어떻게 의료 데이터에 대한 classify 성능이 더 좋아지냐?
+
+    - 가장 앞단의 filter에서는 Low level의 feature들(edge, color 등)을 인식하고 뒷쪽으로 갈 수록 앞쪽 layer의 filter들과 합성되어서 점점 abstract한 것들을 인식함.
+
+       <img src="/assets/images/计视/myNote/pic01/bN2iA.png" alt="bN2iA" style="zoom:45%;" />
+
+      그래서 Low level의 feature를 미리 학습해 놓는다는 거는 그 어떤 이미지를 분석 할 때도 도움이 됨 
+
+- 정리를 해보면 :
+
+   <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-08-04 at 3.42.06 PM.png" alt="Screen Shot 2021-08-04 at 3.42.06 PM" style="zoom:40%;" />
 
 
 
