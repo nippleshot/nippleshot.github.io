@@ -31,18 +31,18 @@ key: ComputerVision04
 
   Ex. Video Classification on frame level : 비디오에서 frame하나하나를 classification을 함
 
-  	- 예측이 현재 시점의 frame에 국한되면 안됨
-  	- 비디오 예측은 현재 시점의 frame과 현재 시점 전에 지나간 모든 frame들에 대한 함수가 되어야됨   
+  - 예측이 현재 시점의 frame에 국한되면 안됨
+  - 비디오 예측은 현재 시점의 frame과 현재 시점 전에 지나간 모든 frame들에 대한 함수가 되어야됨   
 
 
 
 ##### RNN의 과정
 
- <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-03 at 3.30.23 PM.png" alt="Screen Shot 2021-08-03 at 3.30.23 PM" style="zoom:25%;" />
+<img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-03 at 3.30.23 PM.png" alt="Screen Shot 2021-08-03 at 3.30.23 PM" style="zoom:25%;" />
 
-- *x* : input vector
+- ***x*** : input vector
 
-- RNN :  
+- ***RNN*** :  
 
   - 내부적으로 state를 가짐
 
@@ -50,15 +50,15 @@ key: ComputerVision04
 
   - Weight로 구성되며 Weight들이 튜닝되어감에 따라서 RNN이 진화되어나가기 때문에, 새로운 input이 들어올때 마다 다른 반응을 보임
 
-  - 매 time step 마다 입력되는 vector에 대해서 ***recurrence function***을 적용할 수 있음.  ***recurrence function***을 적용함으로써 sequence를 처리해 줄 수 있게됨 :
+  - 매 time step 마다 입력되는 vector에 대해서 *recurrence function*을 적용할 수 있음.  *recurrence function*을 적용함으로써 sequence를 처리해 줄 수 있게됨 :
 
      <img src="/assets/images/计视/myNote/pic04/Screen Shot 2021-08-03 at 3.29.53 PM.png" alt="Screen Shot 2021-08-03 at 3.29.53 PM" style="zoom:30%;" />
 
     - State : Vector의 collection
 
-      **:warning: 모든 time step에서 동일한 recurrence function 과 동일한 parameter가 사용됨**
+      *:warning: 모든 time step에서 동일한 recurrence function 과 동일한 parameter가 사용됨*
 
-- *y* : 우리는 특정 time step에서의 vector의 예측을 원함 
+- ***y*** : 우리는 특정 time step에서의 vector의 예측을 원함 
 
 
 

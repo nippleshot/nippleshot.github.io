@@ -451,7 +451,7 @@ and more ...
 
   4. 행렬로 변환한 입력 데이터와 필터의 행렬 연산 이후, 우리는 출력된 데이터(행렬)를 다시 원래의 데이터(3차원)로 변환해주는 작업을 해야됨
 
-     <img src="/assets/images/计视/myNote/gif/col2im.gif" alt="col2im" style="zoom: 60%;" />
+  <img src="/assets/images/计视/myNote/gif/col2im.gif" alt="col2im" style="zoom: 60%;" />
 
   
 
