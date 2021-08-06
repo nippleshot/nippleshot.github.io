@@ -137,7 +137,7 @@ key: systemDesign05
 
 
 
-##### 异常(Exception)
+#### 异常(Exception)
 
 - C++支持try-catch但是不支持try-catch-finally，为啥呢？
 
