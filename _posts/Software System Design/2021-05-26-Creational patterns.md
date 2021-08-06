@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 02. Creational patterns
+title: 02. Creational Patterns
 author: J_宋
 tags: SoftwareSystemDesign 中文 한글
 mathjax: true

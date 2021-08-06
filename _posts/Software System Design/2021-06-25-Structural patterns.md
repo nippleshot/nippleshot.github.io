@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 04. Structural patterns
+title: 04. Structural Patterns
 author: J_宋
 tags: SoftwareSystemDesign 中文 한글
 mathjax: true
