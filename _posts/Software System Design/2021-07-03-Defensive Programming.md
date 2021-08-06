@@ -233,3 +233,17 @@ key: systemDesign05
 
  <img src="/assets/images/软设/myNote/pic_06/Screen Shot 2021-06-27 at 10.16.46 PM.png" alt="Screen Shot 2021-06-27 at 10.16.46 PM" style="zoom:40%;" />
 
+
+
+
+
+---
+
+《Reference》
+
+1. 2021年(春) 软件设计系统 : 潘敏学
+
+
+
+***
+
