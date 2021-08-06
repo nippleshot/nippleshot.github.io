@@ -15,6 +15,8 @@ key: systemDesign05
 
 
 
+#### 防御式编程(Defensive Programming)
+
 什么是防御式编程？
 
 - **通过预见到问题所在，做出相应的防范措施来防止类似意外的发生**
@@ -51,7 +53,7 @@ key: systemDesign05
 
 
 
-断言 -- Assertions
+#### 断言(Assertions)
 
 - **主要用于开发和维护阶段**
 - 让程序在运行时进行自检的代码
@@ -93,7 +95,7 @@ key: systemDesign05
 
 
 
-错误(Fault)处理技术
+#### 错误(Fault)处理技术
 
 - 错误 ： 用户错误，程序员错误，意外情况 ...
 
@@ -135,7 +137,7 @@ key: systemDesign05
 
 
 
-异常
+##### 异常(Exception)
 
 - C++支持try-catch但是不支持try-catch-finally，为啥呢？
 
@@ -155,7 +157,7 @@ key: systemDesign05
 
 
 
-隔栏 -- Barricade
+#### 隔栏(Barricade)
 
 - 以防御式编程为目的而进行隔离的一种方法
 - 系统分成两个部分
@@ -169,7 +171,7 @@ key: systemDesign05
 
 
 
-辅助调试的代码
+#### 辅助调试的代码
 
 - 进攻式编程 -- Offensive Programming
   - 主动暴露可能出现错误的态度
