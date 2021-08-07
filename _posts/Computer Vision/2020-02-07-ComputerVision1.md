@@ -257,7 +257,7 @@ K-Nearest Neighbor Classifier
 
 ##### Neuron
 
-<img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 1.39.00 PM.png" alt="Screen Shot 2021-07-26 at 1.39.00 PM" style="zoom:40%;" />
+<img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 1.39.00 PM.png" alt="Screen Shot 2021-07-26 at 1.39.00 PM" style="zoom:40%;" /> <a name="cellBodySum"></a>
 
 ```python
 class Neuron(object):
@@ -296,7 +296,7 @@ class Neuron(object):
 
 ##### Activation Function
 
-- 활성화(Activate)라는 이름에서 알 수 있듯이 활성화 함수란 입력 신호의 총합 `cell_body_sum`이 활성화를 일으키는지 정하는 역할을 한다
+- 활성화(Activate)라는 이름에서 알 수 있듯이 활성화 함수란 입력 신호의 총합<a href="#cellBodySum"> `cell_body_sum` </a>이 활성화를 일으키는지 정하는 역할을 한다
 
 - Activation Function를 왜 반드시 이용해야되나?
 
