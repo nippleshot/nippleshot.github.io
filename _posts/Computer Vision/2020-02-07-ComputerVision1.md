@@ -444,6 +444,10 @@ class Neuron(object):
 
 **방법4. Batch Normalization**
 
+- Batch :
+
+    <img src="/assets/images/计视/myNote/pic01/Batch.png" alt="Batch" style="zoom:40%;" />
+
 - 각 layer들을 거치면서 입력값의 분포가 달라지는 현상이 발생하기 때문에 학습 불안정화가 생긴다고 주장
 
 - 그래서 각 layer들을 거칠때 마다 이것들을 Normalize를 해주자는 방식
