@@ -143,9 +143,9 @@ key: ComputerVision02
 
 ##### AlexNet (Krizhevsky et al. 2012)
 
- <img src="/assets/images/计视/myNote/pic02/download.png" alt="download" style="zoom:70%;" />
+ <img src="/assets/images/计视/myNote/pic02/AlexNet-1.png" alt="AlexNet-1" style="zoom:67%;" />
 
-- input size : 227×227×227
+- input size : 227×227×3
 
 - 2개의 GPU로 병렬연산을 수행하기 위해서 병렬적인 구조로 설계됨
 
