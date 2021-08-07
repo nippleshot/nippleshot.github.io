@@ -255,9 +255,9 @@ K-Nearest Neighbor Classifier
 
 #### Neural Network
 
-##### Neuron
+##### Neuron <a name="cellBodySum"></a>
 
-<img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 1.39.00 PM.png" alt="Screen Shot 2021-07-26 at 1.39.00 PM" style="zoom:40%;" /> <a name="cellBodySum"></a>
+<img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-26 at 1.39.00 PM.png" alt="Screen Shot 2021-07-26 at 1.39.00 PM" style="zoom:40%;" /> 
 
 ```python
 class Neuron(object):
