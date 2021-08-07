@@ -32,7 +32,7 @@ key: ComputerVision03
 
 
 
-##### 方法1 ：Localization as Regression
+##### Localization as Regression
 
 - Steps :
 
@@ -84,7 +84,7 @@ key: ComputerVision03
 
 
 
-##### 方法2 ：Sliding Window
+##### Sliding Window
 
 - 특징 :
 
