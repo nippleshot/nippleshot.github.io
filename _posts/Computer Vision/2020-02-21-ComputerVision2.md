@@ -396,7 +396,7 @@ and more ...
 
    - 그럼 위에 두 상황에서 parameter 수량과 연산횟수를 계산해보면 작은 filter를 사용하는 방식이 두 방면 모두 더  적다는 걸 알 수 있다. 
 
-      <img src="/assets/images/计视/myNote/pic04/cs231n 11강 CNNs in practice 21-57 screenshot.png" alt="cs231n 11강 CNNs in practice 21-57 screenshot" style="zoom:25%;" />
+      <img src="/assets/images/计视/myNote/pic04/21-57screenshot.png" alt="cs231n 11강 CNNs in practice 21-57 screenshot" style="zoom:25%;" />
 
    - 그리고 더 층을 쌓을 수로 그만큼 activation function도 쌓아지기 때문에 non-linearity가 더 강화된다
 
