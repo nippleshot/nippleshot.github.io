@@ -87,7 +87,7 @@ key: dataStructure03
 
   - 기타 연산들 :
 
-    -  ` A.pop(1)` : `A[1] ` 를 제거하고 return
+    - `A.pop(1)`  : A[1] 를 제거하고 return
 
       List A : **(객체1 주소) (객체2 주소) (객체3 주소) (객체4 주소)** **:arrow_right: (객체1 주소) (객체3 주소) (객체4 주소)** 
 
@@ -109,9 +109,9 @@ key: dataStructure03
     if A.n < A.capacity:
     	A[n] = x
     	A.n = n+1
-    else : 								// A.n == A.capacity 일 경우
+    else : // A.n == A.capacity 일 경우
     	B = allocate new list with size of (A.capacity * 2)
-    	for i in range(n):  // A에 있는 값들을 B로 옮기기
+    	for i in range(n): // A에 있는 값들을 B로 옮기기
     		B[i] = A[i]
     	delete old list A
     	A = B
