@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Data structures applied to programming languages
+title: 프로그램 언어에 적용된 데이터 구조들
 author: J_宋
 tags: DataStructure 한글
 mathjax: true
@@ -103,9 +103,9 @@ key: dataStructure03
     }
     ```
 
-  - ` A.append(x)` 간단한 동작과정 :
+  -  `A.append(x)` 의 간단한 동작과정 :
 
-    ```pseudocode
+    ```python
     if A.n < A.capacity:
     	A[n] = x
     	A.n = n+1
