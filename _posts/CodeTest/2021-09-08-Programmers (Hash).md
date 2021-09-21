@@ -259,7 +259,7 @@ class Solution {
 
 노래의 장르를 나타내는 문자열 배열 genres와 노래별 재생 횟수를 나타내는 정수 배열 plays가 주어질 때, 베스트 앨범에 들어갈 노래의 고유 번호를 순서대로 return 하도록 solution 함수를 완성하세요.
 
-##### 제한사항
+***제한사항***
 
 - genres[i]는 고유번호가 i인 노래의 장르입니다.
 - plays[i]는 고유번호가 i인 노래가 재생된 횟수입니다.
@@ -411,6 +411,7 @@ class Solution {
   	String[] genres = {"classic", "pop", "classic", "classic", "pop"};
   	int[] plays = {500, 600, 150, 800, 2500};
   
+  
   >>>>>>>>>>>>>>>>>>>>>>>> 새로운 Data 추가 : [genres = classic; musicID = 0; playedNum = 500]
   (counterMap 현황)
                장르         총 진행시간
@@ -419,7 +420,8 @@ class Solution {
   (rankingMap 현황)
             장르                      1순위                           2순위
          ---------------------------------------------------------------------------------
-          classic    [musicID = 0; playedNum = 500]                                    
+          classic    [musicID = 0; playedNum = 500]
+                 
   
   >>>>>>>>>>>>>>>>>>>>>>>> 새로운 Data 추가 : [genres = pop; musicID = 1; playedNum = 600]
   (counterMap 현황)
@@ -433,6 +435,7 @@ class Solution {
               pop    [musicID = 1; playedNum = 600]                                    
           classic    [musicID = 0; playedNum = 500]                                    
   
+                 
   >>>>>>>>>>>>>>>>>>>>>>>> 새로운 Data 추가 : [genres = classic; musicID = 2; playedNum = 150]
   (counterMap 현황)
                장르         총 진행시간
@@ -445,6 +448,7 @@ class Solution {
               pop    [musicID = 1; playedNum = 600]                                    
           classic    [musicID = 0; playedNum = 500]     [musicID = 2; playedNum = 150] 
   
+                 
   >>>>>>>>>>>>>>>>>>>>>>>> 새로운 Data 추가 : [genres = classic; musicID = 3; playedNum = 800]
   (counterMap 현황)
                장르         총 진행시간
@@ -457,6 +461,7 @@ class Solution {
               pop    [musicID = 1; playedNum = 600]                                    
           classic    [musicID = 3; playedNum = 800]     [musicID = 0; playedNum = 500] 
   
+                 
   >>>>>>>>>>>>>>>>>>>>>>>> 새로운 Data 추가 : [genres = pop; musicID = 4; playedNum = 2500]
   (counterMap 현황)
                장르         총 진행시간
