@@ -39,7 +39,7 @@ key: ComputerVision06
 
 ### GAN 평가 방법들
 
-#### CID index [<a href="https://shuyueg.github.io/doc/AIPR2019.pdf">Guan et al., 2019</a>]
+#### 1. CID index [<a href="https://shuyueg.github.io/doc/AIPR2019.pdf">Guan et al., 2019</a>]
 
 ##### CID index 공식
 
@@ -84,7 +84,7 @@ key: ComputerVision06
 
 
 
-⁉️ ***GLCM(Gray Level Co-occurrence Matrix)*** <a name="GLCM"></a>
+⁉️ GLCM(Gray Level Co-occurrence Matrix) <a name="GLCM"></a>
 
 - GLCM이란, 통계적 질감 분석방법으로 현 재 픽셀과 그 이웃하는 픽셀의 밝기 값의 관계를 대비(Contrast), 상관관계(Correlation), 에너지(Energy), 동질성(Homogeneity) 등과 같은 질감 특징을 결정하는 통계량으로 계산하여 표현하는 것으로, 밝기를 나타낸 영상에서 정의한 변위벡터의 거리와 방향이 일치하는 픽셀쌍의 빈도 수를 표시하는 빈도 수 매트릭스이다
 
@@ -104,7 +104,7 @@ key: ComputerVision06
 
 
 
-#### Inception Score (IS) [<a href="https://arxiv.org/pdf/1606.03498.pdf">Salimans et al. 2016</a>]
+#### 2. Inception Score (IS) [<a href="https://arxiv.org/pdf/1606.03498.pdf">Salimans et al. 2016</a>]
 
 - Inception model (<a href="https://arxiv.org/pdf/1512.00567.pdf">Szegedy et al., 2016</a>) : 1,000개의 클래스와 120만개의 이미지로 구성 된 ImageNet g훈련 데이터를 pre-trained한 CNN모형으로 어떤 이미지가 입력되 면 각 1,000개의 클래스에 속할 확률 vector를 출력
 
@@ -182,7 +182,7 @@ The inception score has
 
 
 
-#### Fréchet Inception Distance (FID) [<a href="https://arxiv.org/pdf/1706.08500.pdf">Heusel et al. 2018</a>]
+#### 3. Fréchet Inception Distance (FID) [<a href="https://arxiv.org/pdf/1706.08500.pdf">Heusel et al. 2018</a>]
 
 - FID를 측정할 때 Inception Network를 사용하게 된다는 걸 이름을 통해 알 수 있음
   - pretrained된 Inception v3에서 출력 레이어를 제거하고 출력이 마지막 Pooling layer어의 Activation을 사용
@@ -225,7 +225,7 @@ The inception score has
 
 
 
-#### 1-Nearest Neighbor classifier (1NNC)
+#### 4. 1-Nearest Neighbor classifier (1NNC)
 
 - Inception Score와 FID처럼 Inception Model을 사용하지 :x:
   - 대신 1-Nearest Neighbor 방법을 활용하여 LOO accuracy를 계산함
