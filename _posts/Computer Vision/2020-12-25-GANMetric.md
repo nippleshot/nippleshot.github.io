@@ -193,10 +193,10 @@ The inception score has
 
 | Notations                                                    |                                |
 | ------------------------------------------------------------ | ------------------------------ |
-| <img src="/Users/song-giljae/nippleshot.github.io/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.04.47 AM.png" alt="Screen Shot 2021-09-24 at 10.04.47 AM" style="zoom: 33%;" /> | 실제 데이터의 특징 평균        |
-| <img src="/Users/song-giljae/nippleshot.github.io/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.04.56 AM.png" alt="Screen Shot 2021-09-24 at 10.04.56 AM" style="zoom: 33%;" /> | 실제 데이터의 특징 공분산 행렬 |
-| <img src="/Users/song-giljae/nippleshot.github.io/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.05.05 AM.png" alt="Screen Shot 2021-09-24 at 10.05.05 AM" style="zoom: 33%;" /> | 생성한 데이터의 특성 평균      |
-| <img src="/Users/song-giljae/nippleshot.github.io/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.05.14 AM.png" alt="Screen Shot 2021-09-24 at 10.05.14 AM" style="zoom: 33%;" /> | 생성한 데이터의 공분산 행렬    |
+| <img src="/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.04.47 AM.png" alt="Screen Shot 2021-09-24 at 10.04.47 AM" style="zoom: 33%;" /> | 실제 데이터의 특징 평균        |
+| <img src="/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.04.56 AM.png" alt="Screen Shot 2021-09-24 at 10.04.56 AM" style="zoom: 33%;" /> | 실제 데이터의 특징 공분산 행렬 |
+| <img src="/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.05.05 AM.png" alt="Screen Shot 2021-09-24 at 10.05.05 AM" style="zoom: 33%;" /> | 생성한 데이터의 특성 평균      |
+| <img src="/assets/images/计视/myNote/GANMetric/Screen Shot 2021-09-24 at 10.05.14 AM.png" alt="Screen Shot 2021-09-24 at 10.05.14 AM" style="zoom: 33%;" /> | 생성한 데이터의 공분산 행렬    |
 
 -  Inception Network를 통해 추출된 생성한 이미지 사진과 실제 사진의 특성은 Gaussian 분포를 따른다는 전제를 가지고, 이 두 Gaussian 분포 그래프의 거리를 계산 하여 평가하게 됨
 
