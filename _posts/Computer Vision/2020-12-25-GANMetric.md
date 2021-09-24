@@ -39,7 +39,7 @@ key: ComputerVision06
 
 ### GAN 평가 방법들
 
-#### CID index (<a href="https://shuyueg.github.io/doc/AIPR2019.pdf">Guan et al., 2019</a>)
+#### CID index [<a href="https://shuyueg.github.io/doc/AIPR2019.pdf">Guan et al., 2019</a>]
 
 ##### CID index 공식
 
@@ -104,7 +104,7 @@ key: ComputerVision06
 
 
 
-#### Inception Score (IS) (<a href="https://arxiv.org/pdf/1606.03498.pdf">Salimans et al. 2016</a>)
+#### Inception Score (IS) [<a href="https://arxiv.org/pdf/1606.03498.pdf">Salimans et al. 2016</a>]
 
 - Inception model (<a href="https://arxiv.org/pdf/1512.00567.pdf">Szegedy et al., 2016</a>) : 1,000개의 클래스와 120만개의 이미지로 구성 된 ImageNet g훈련 데이터를 pre-trained한 CNN모형으로 어떤 이미지가 입력되 면 각 1,000개의 클래스에 속할 확률 vector를 출력
 
@@ -174,13 +174,15 @@ The inception score has
 
 [4] Generator가 Image의 class 당 하나의 Image만 생성하고 각 Image를 여러번 반복하는 경우
 
-- 이렇게 되면 높은 IS의 조건에 충족하기 때문에 높은 점수를 받음. 이처럼 <span style="color:red">**Inception Score는 class 내의 다양성을 측정할 수 없음**</span>
+- 이렇게 되면 높은 IS의 조건에 충족하기 때문에 높은 점수를 받음
+
+- 이처럼 <span style="color:red">**Inception Score는 class 내의 다양성을 측정할 수 없음**</span>
 
    <img src="/assets/images/计视/myNote/GANMetric/imageGenrator.png" alt="imageGenrator" style="zoom:33%;" />
 
 
 
-#### Fréchet Inception Distance (FID) 
+#### Fréchet Inception Distance (FID) [<a href="https://arxiv.org/pdf/1706.08500.pdf">Heusel et al. 2018</a>]
 
 - FID를 측정할 때 Inception Network를 사용하게 된다는 걸 이름을 통해 알 수 있음
   - pretrained된 Inception v3에서 출력 레이어를 제거하고 출력이 마지막 Pooling layer어의 Activation을 사용
