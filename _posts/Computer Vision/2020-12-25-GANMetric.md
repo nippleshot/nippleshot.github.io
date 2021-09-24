@@ -112,7 +112,7 @@ key: ComputerVision06
 
  <img src="/assets/images/计视/myNote/GANMetric/inception score.png" alt="inception score" style="zoom:53%;" />
 
-- Conditional label distibution ***p(y|x)*** : <span style="color:green">생성된 Image의 품질를 측정하는 부분</span>
+- Conditional label distibution ***p(y\|x)*** : <span style="color:green">생성된 Image의 품질를 측정하는 부분</span>
 
   - 생성된 Image *x*를 Inception 모델을 통해 나온 각 label에 대한 확률분포
 
