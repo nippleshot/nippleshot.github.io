@@ -25,6 +25,14 @@ key: ComputerVision02
 
 <img src="/assets/images/计视/myNote/pic02/cnn_architectures-03.png" alt="cnn_architectures-03" style="zoom:50%;" />
 
+##### Padding
+
+- zero padding : 데이터의 주변에 0을 붙여주어 필터를 통과한 후에도 데이터의 형태가 유지되도록 하는 것입니다. 
+  - zero padding을 하지 않는다면, 7x7 형태의 입력 데이터를 3x3 형태의 필터를 간격을 1씩 이동하며 통과하면 5x5 형태의 데이터가 출력되어야 하지만 zero padding을 해서 3x3 필터를 통과하면 7x7 형태가 유지된 채로 출력됩니다.
+- padding을 하면 데이터의 손실을 줄여줄 수 있지만, 원래 데이터에 없던 데이터를 붙였기 때문에 noise가 발생하게 됩니다.
+- noise의 영향을 최소화하기 위해 padding 값을 0으로 하는 것입니다.
+- noise가 발생함에도 데이터의 손실을 줄여주는 게 더 낫기 때문에 padding을 합니다.
+
 ##### Convolution Layer
 
 - 동작 과정 및 설명 (👇 Stride = 2, Padding = 1时)
@@ -103,7 +111,7 @@ key: ComputerVision02
 
 - Pooling 방법 :
 
-  方法1 ：**Max Pooling** : 
+  方法1 ：**Max Pooling** - 해당 구역에서 최대값을 찾는 방법
 
   - Hyperparameters : 
     - Filter size (일반적으론 2 설정)
@@ -119,6 +127,27 @@ key: ComputerVision02
     $$
     {\text{ Input Width or Height size } - \text{ Filter Width or Height size } \over \text{ Stride }} + 1
     $$
+  
+  方法2 : **Average Pooling** - 해당 구역의 평균값을 계산하는 방식
+  
+- Pooling을 하는 이유
+
+  1. overfitting을 방지하기 위해서
+
+     - 만약 우리에게 64x64인 이미지가 주어져 있다고 하고 이를 300개의 8x8 형태인 filter로 Convolution하 (stride가 1이고 padding이 0이라고 가정) , 한 개의 특성맵에 (64-8+1)x(64-8+1) = 3349개의 feature가 존재하고 이러한 특성맵이 합성곱 층에 300개 존재하므로 총 3349x300 = 974,700개의 특성이 존재하게 됩니다.
+     - 이렇게 **feature가 많다면 overfitting이 생길 가능성이 높습니다.** 그럼으로 이를 pooling을 통해 데이터의 크기를 줄여 조절하는 것입니다.
+
+  2. 평행이동이나 변형에 대해서 일정 수준의 不变性을 갖기 위해
+
+     - 데이터가 오른쪽으로 1칸 이동하고 Max-pooling을 해도, 원래 데이터에서 Max-pooling을 한 결과와 동일한 것을 알 수 있습니다.
+
+        <img src="/assets/images/计视/myNote/pic02/download1.png" alt="download1" style="zoom:70%;" />
+
+     - 어떤 물체의 구체적인 위치가 아닌 존재 여부가 더 중요할 땐 이런 일정 수준의 이동에 대한 不变性이 유용하게 작용합니다.
+
+- Pooling의 단점 :
+  - 원본 데이터의 크기를 줄이기 때문에 파괴적 입니다.
+  - 입력 이미지가 오른쪽으로 한 픽셀 이동했을 때 출력도 오른쪽으로 한 픽셀 이동해야 하는 Segmentation 같은 작업에는 이런 不变性이 필요하지 않습니다.
 
 ##### Classification Layer
 

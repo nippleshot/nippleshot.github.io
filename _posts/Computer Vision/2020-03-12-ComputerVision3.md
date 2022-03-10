@@ -40,7 +40,7 @@ key: ComputerVision03
 
   1. *일반적인 Classification 모델(= "Classification head") 을 훈련시킴* 
 
-     - Loss : Softmax
+     - Loss : Softmax Cross Entropy
 
   2. *Output이 Box의 좌표가 나오는 뒷단(= "Regression head")을 추가시킴*
 
@@ -143,7 +143,7 @@ key: ComputerVision03
 
   - 해결방안 : 빠른 classifier로 그냥 돌려라
 
-    - Histogram of Oriented Gradients (HOG)
+    - <a href="https://bkshin.tistory.com/entry/OpenCV-33-HOG-%EB%94%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%84%B0HOG-Descriptor">Histogram of Oriented Gradients (HOG)</a>
 
       - 다양한 resolution을 가지는 이미지들에 대해서 linear classifier를 돌린다
       - linear classifier는 매우 빠르기 때문에 최대한 다양한 해상도와 영역에 돌려보는 방법
@@ -254,10 +254,13 @@ key: ComputerVision03
 
   - Based on Spatial Pyramid Pooling(SPP) (He at el. 2015)
 
-     <img src="/assets/images/计视/myNote/pic03/SPP.png" alt="SPP" style="zoom:35%;" />
+    <img src="/assets/images/计视/myNote/pic03/SPP.png" alt="SPP" style="zoom:35%;" />
 
     - ***Input이미지의 크기에 관계 없이 Conv. layer들을 통과시키고, FC layer 통과 전에 Activation map(= feature map)들을 동일한 크기로 조절해주는 pooling을 적용***
-    - 먼저 이미지를 CNN에 통과시켜 feature map을 추출하고 max pooling을 적용하여 outputdㅣ 각 4x4, 2x2, 1x1 피라미드 크기에 맞게 max값을 뽑아낸다. 각 피라미드 별로 뽑아낸 max값들을 쭉 이어붙여 고정된 크기 vector를 만들고 이게 FC layer의 input으로 들어간다.
+
+    - 먼저 이미지를 CNN에 통과시켜 feature map을 추출하고 max pooling을 적용하여 각 4x4, 2x2, 1x1크기의  output 결과를 뽑아낸다. 각 피라미드 별로 뽑아낸 max값들을 쭉 이어붙여 고정된 크기 vector를 만들고 이게 FC layer의 input으로 들어간다.
+
+       <img src="/assets/images/计视/myNote/gif/pytorch-tpp-visual.gif" alt="pytorch-tpp-visual" style="zoom:23%;" />
 
   - RoI Pooling 과정
 

@@ -12,6 +12,9 @@ key: ComputerVision01
 #### Image 
 
 - 이미지는 숫자로 구성된 3D Array로 구성됨
+  
+   <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-09-29 at 3.16.59 PM.png" alt="Screen Shot 2021-09-29 at 3.16.59 PM" style="zoom: 43%;" />
+  
   - 숫자 = 0~255
   - 3D Array = [Hight] × [Width] × [Color channel]
 
@@ -450,22 +453,37 @@ class Neuron(object):
 
 - 각 layer들을 거치면서 입력값의 분포가 달라지는 현상이 발생하기 때문에 학습 불안정화가 생긴다고 주장
 
-- 그래서 각 layer들을 거칠때 마다 이것들을 Normalize를 해주자는 방식
+     <img src="/assets/images/计视/myNote/pic01/shift.png" alt="shift" style="zoom:40%;" />
 
-  - 각 layer마다 Normalize를 해주더라도 여전히 미분가능한 함수이고 forward/backward pass하는데 문제없음
+- batch normalization은 학습 과정에서 각batch 단위 별로 데이터가 다양한 분포를 가지더라도 **각 batch별로 평균과 분산을 이용해 정규화** 시켜줌
 
-- Batch Normalization은 일반적으로 Fully-connected 와 Activation function 사이에 위치 
+   <img src="/assets/images/计视/myNote/pic01/BN.png" alt="BN" style="zoom:40%;" />
+
+- Batch-Norm은 입력의 스케일만 살짝 조정해주는 역할이기 때문에 Fully-connected 와 Conv Layer 어디에든 적용할 수 있음
+
+    <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-09-29 at 2.33.22 PM.png" alt="Screen Shot 2021-09-29 at 2.33.22 PM" style="zoom: 33%;" />
+
+  - Conv Layer의 경우, Activation map(채널, Depth)마다 평균과 분산을 하나만 구함. 그리고 현재 Batch에 있는 모든 데이터로 Normalize 해줌. (Conv Layer 출력인 activation maps이 '공간적 구조'를 유지하고 있기를 원하기 때문에 이 점을 고려해서 CNN Activation Map을 Normalize 할 때는 전체 map의 평균과 분산을 같이 구함)
 
   <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-28 at 2.40.04 PM.png" alt="Screen Shot 2021-07-28 at 2.40.04 PM" style="zoom:35%;" />
 
-  
+  - Batch 사이즈가 작으면 정확도가 떨어지긴 하겠지만 여전히 비슷한 효과를 줄 수 있음
 
    <img src="/assets/images/计视/myNote/pic01/Screen Shot 2021-07-27 at 10.43.31 PM.png" alt="Screen Shot 2021-07-27 at 10.43.31 PM" style="zoom:33%;" />
+
+  - 4번 단계에서 Unit gaussian으로 normalize 된 값들을 ***감마***로는 스케일링 효과를 ***베타***는 이동의 효과를 줄 수 있음
+    - 추가적인 유연성을 제공
 
 - 장점 :
 
   - Learning rate가 다소 큰 값을 가지더라도 그걸 허용해줌으로써 빠른 학습을 가능케 하는 효과가 있음
   - weight 초기화에 너무 의존하지 않아도 됨
+
+- Batch Norm이 regularization의 역할도 함
+
+    - 각 Layer의 출력은 해당 데이터 하나뿐만 아니라 batch안에 존재하는 모든 데이터들에 영향을 받음 (평균, 분산)
+
+        (왜냐하면 각 레이어의 입력은 해당 배치의 (표본) 평균으로 Normalize 되기 때문)
 
 - Batch Normalization를 사용하면 Dropout을 사용할 필요가 없다고 함
 
